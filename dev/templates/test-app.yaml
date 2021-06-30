@@ -1,0 +1,21 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: from-config-repo
+#   namespace: argocd
+# spec:
+#   destination:
+#     namespace: test
+#     server:  https://kubernetes.default.svc
+#   project: default
+#   source:
+#     path: app-chart
+#     repoURL: https://github.com/rohatgisanat-amagi/argocd-config.git
+#     helm:
+#       valueFiles:
+#         - values.yaml
+#       fileParameters:
+#         -  name: settings
+#            path: setting.yaml
+#   syncPolicy:
+#     automated: {}

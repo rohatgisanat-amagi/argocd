@@ -1,0 +1,8 @@
+serviceMonitor:
+  enabled: true
+  targets:
+    - name: example                    # Human readable URL that will appear in Prometheus / AlertManager
+      url: https://google.com/  # The URL that blackbox will scrape
+      interval: 60s                    # Scraping interval. Overrides value set in `defaults`
+      scrapeTimeout: 15s               # Scrape timeout. Overrides value set in `defaults`
+      module: http_2xx
